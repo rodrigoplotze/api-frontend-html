@@ -11,23 +11,23 @@ input{
     font-size: 22px;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-align: center;
   color: #333;
 }
 
 td{
-    font-size: 22px;
+    font-size: 18px;
 }
 
-.btn-excluir-moderno {
+.btn-excluir {
   background: #c82333;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 

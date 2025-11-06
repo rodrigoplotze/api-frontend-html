@@ -9,8 +9,8 @@ async function carregarProdutos() {
     lista.innerHTML = "";
     dados.forEach((p) => {
         const li = document.createElement("tr");
-        li.innerHTML = `<td style='width:60%'>${p.nome}</td> <td style='width:30%'>R$ ${p.preco.toFixed(2)}</td><td style='width:10%'> 
-        <button onclick="removerProduto(1)" class="btn-excluir-moderno">
+        li.innerHTML = `<td style='width:60%'>${p.nome} </td> <td style='width:30%'>R$ ${p.preco.toFixed(2)}</td><td style='width:10%'> 
+        <button onclick="removerProduto(${p.id})" class="btn-excluir">
         Excluir </button></td>`;
         lista.appendChild(li);
     });
@@ -31,13 +31,16 @@ async function adicionarProduto() {
         body: JSON.stringify({ nome, preco }),
     });
 
+    document.getElementById("nome").value = "";
+    document.getElementById("preco").value = "";
+
+    alert("Produto adicionado com sucesso!");
+
     carregarProdutos();
 }
 
-// 
-
-
 async function removerProduto(id) {
     await fetch(API_URL + id, { method: "DELETE" });
+    lert("Produto apagado com sucesso!");
     carregarProdutos();
 }
